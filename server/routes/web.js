@@ -5,6 +5,7 @@ const adminAuth=require("../middleware/adminAuth")
 const Usercontroller = require("../controllers/UserController")
 const Hotelcontroller = require("../controllers/HotelController")
 const Bookingcontroller=require("../controllers/BookingController")
+const PaymentController=require("../controllers/PaymentController")
 
 //USER
 router.post("/registration", Usercontroller.register)
@@ -28,6 +29,10 @@ router.get("/getbookings",auth,adminAuth, Bookingcontroller.getMyBooking)
 router.get("/singlebooking/:id",auth,Bookingcontroller.getSingleBooking)
 router.get("/getallbooking",auth ,adminAuth,Bookingcontroller.getAllBooking)
 router.put("/cancelbooking/:id",auth,Bookingcontroller.cancelbooking)
+
+
+//PAYMENT
+router.post("/createorder",auth,PaymentController.createOrder)
 
 
 module.exports=router
