@@ -29,7 +29,8 @@ const UserSchema = new mongoose.Schema({
 
     role:{
         type: String,
-        default:"user"
+        enm:["user","admin"],
+        default:"user",
     }
 },{timestamps: true})
 

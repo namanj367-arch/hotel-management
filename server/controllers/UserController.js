@@ -65,7 +65,7 @@ class Usercontroller{
             }
              //console.log("4")
 
-            const token=jwt.sign({id: user.id},process.env.JWT_SECRET,{expiresIn:"1h"})
+            const token=jwt.sign({id: user.id,role:user.role},process.env.JWT_SECRET,{expiresIn:"1h"})
             res.cookie("token", token,{
                 httpOnly: true,
                 secure: process.env.NODE_ENV === "production",
