@@ -1,9 +1,20 @@
-import React from 'react'
+import React from "react"
+import { Outlet } from "react-router-dom"
+import Navbar from "../components/Navbar"
+import Footer from "../components/Footer"
 
 function UserLayout() {
-  return (
-    <div>UserLayout</div>
-  )
+    return (
+        <>
+            <Navbar />
+
+            <main>
+                <Outlet />
+            </main>
+
+            <Footer />
+        </>
+    )
 }
 
 export default UserLayout
