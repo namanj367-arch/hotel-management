@@ -178,7 +178,7 @@ class Bookingcontroller {
 
             if(hotel){
                 hotel.availableRooms += booking.rooms
-                await booking.save()
+                await hotel.save()
             }
 
              res.status(200).json({
