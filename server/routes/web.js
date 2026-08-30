@@ -10,7 +10,7 @@ const PaymentController=require("../controllers/PaymentController")
 //USER
 router.post("/registration", Usercontroller.register)
 router.post("/login", Usercontroller.login)
-router.get("/getprofile/:id", auth,Usercontroller.getprofile)
+router.get("/getprofile", auth,Usercontroller.getprofile)
 router.get("/logout",auth, Usercontroller.logout)
 router.put("/update/:id",auth,Usercontroller.updateProfile)
 router.put("/changepassword", auth,Usercontroller.changePassword)
@@ -25,7 +25,7 @@ router.delete("/deletehotel/:id",auth,adminAuth,Hotelcontroller.deleteHotel)
 
 //BOOKING
 router.post("/createbooking", auth, Bookingcontroller.createbooking)
-router.get("/getbookings",auth,adminAuth, Bookingcontroller.getMyBooking)
+router.get("/getbookings",auth, Bookingcontroller.getMyBooking)
 router.get("/singlebooking/:id",auth,Bookingcontroller.getSingleBooking)
 router.get("/getallbooking",auth ,adminAuth,Bookingcontroller.getAllBooking)
 router.put("/cancelbooking/:id",auth,Bookingcontroller.cancelbooking)
